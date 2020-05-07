@@ -1,0 +1,23 @@
+@import '../../assets/scss/colorVariables';
+
+.stars {
+
+    position: relative;
+    min-width: 200px;
+    display: inline-flex;
+    .star {
+        position: absolute;
+        display: inline-flex;
+        mask: url(../../assets/images/icons/ic_rating_gold.svg);
+        &:not(.placeholder) {
+            z-index: 5;
+            background-color: $yellow;
+        }
+        &.placeholder {
+            z-index: 4;
+            background-color: $gray-200;
+        }
+    }
+    
+
+}
