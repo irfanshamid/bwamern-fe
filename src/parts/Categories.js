@@ -5,7 +5,7 @@ import Fade from 'react-reveal/Fade';
 export default function Categories({data}) {
     return data.map( (category, index1) => {
         return (
-        <Fade buttom>
+        <Fade bottom>
         <section className="container" key={`category-${index1}`}>
             <h4 className="mb-3 font-weight-medium">
                 {category.name}
@@ -21,7 +21,7 @@ export default function Categories({data}) {
                     
                     category.items.map( (item, index2) => {
                         return (
-                            <div className="item column-3 row-1" key={`category-${index1}-item-${index2}`}>
+                            <div className="item column-3 row-1" key={`category-${index1}-items-${index2}`}>
 
                                 <Fade bottom delay={300 * index2}>
                                 <div className="card">

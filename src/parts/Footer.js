@@ -59,7 +59,7 @@ export default function Footer() {
                     </ul>
                 </div>
 
-                <div className="row">
+                <div className="col-12">
                     <div className="col text-center copyrights">
                         Copyright 2019 • All rights reserved • Staycation
                     </div>
