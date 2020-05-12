@@ -5,9 +5,6 @@ import formatNumber from 'utils/formatNumber'
 
 import ImgHero from 'assets/images/hero-img.jpg'
 import ImgHeroFrame from 'assets/images/hero-frame.jpg'
-import IconTraveler from 'assets/images/icons/ic_traveler.svg'
-import IconTreasure from 'assets/images/icons/ic_treasure.svg'
-import IconCities from 'assets/images/icons/ic_cities.svg'
 
 import Fade from 'react-reveal/Fade';
 
@@ -43,7 +40,7 @@ export default function Hero(props) {
                             <img 
                                 width = "36"
                                 height = "36"
-                                src={IconTraveler}
+                                src='/images/ic_traveler.svg'
                                 alt={`${props.data.travelers} Travelers`} />
                             <h6 className="mt-3">
                                 {formatNumber(props.data.travelers)} <span className="text-gray-500 font-weight-light">travelers</span>
@@ -53,7 +50,7 @@ export default function Hero(props) {
                             <img 
                                 width = "36"
                                 height = "36"
-                                src={IconTreasure}
+                                src='/images/ic_treasure.svg'
                                 alt={`${props.data.treasures} Treasure`} />
                             <h6 className="mt-3">
                                 {formatNumber(props.data.treasures)} <span className="text-gray-500 font-weight-light">treasures</span>
@@ -63,7 +60,7 @@ export default function Hero(props) {
                             <img 
                                 width = "36"
                                 height = "36"
-                                src={IconCities}
+                                src='/images/ic_cities.svg'
                                 alt={`${props.data.cities} Cities`} />
                             <h6 className="mt-3">
                                 {formatNumber(props.data.cities)} <span className="text-gray-500 font-weight-light">cities</span>

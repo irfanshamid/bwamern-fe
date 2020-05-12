@@ -1,0 +1,72 @@
+@import '../../../assets/scss/colorVariables';
+
+$stepperMainColor: $gray-200;
+$size: 50px;
+
+.stepper {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+    justify-content: center;
+
+    li {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        list-style: none;
+        width: $size;
+        height: $size;
+        border-radius: $size;
+        color: $white;
+
+        &:after {
+            position: absolute;
+            content: "";
+            z-index: 2;
+            width: $size;
+            border-radius: $size;
+            height: $size;
+            background-image: url('data:image/svg+xml;utf8,<svg width="30" height="21" viewBox="0 0 26 21" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 10.5L6.79011 17.8004C7.51562 18.9062 9.09536 19.0159 9.96675 18.021L24 2" stroke="white" stroke-width="4" stroke-linecap="round"/></svg>');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-color: $teal;
+            transform: scale(1);
+            transition: 0.35s transform ease-in-out;
+        }
+
+        &:not(:last-child){
+            margin-right: 60px;
+            &::before {
+                content: "";
+                z-index: -2;
+                top: 50%;
+                left: 100%;
+                position: absolute;
+                width: $size + 10px;
+                height: 1px;
+                background-color: $stepperMainColor;
+            }
+        }
+
+        &.active {
+            &.after {
+                z-index: -1;
+                background: $white;
+                border: 1px solid $stepperMainColor;
+                transform: scale(1.2);
+            }
+            background-color: $stepperMainColor;
+            color: $gray-500;
+
+            & ~ li {
+                color: $gray-500;
+                background: $stepperMainColor;
+                &.after {
+                    content: none;
+                }
+            }
+        }
+    }
+}
