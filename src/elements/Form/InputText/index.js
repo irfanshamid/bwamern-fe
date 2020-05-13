@@ -5,7 +5,7 @@ import './index.scss'
 
 export default function Text(props) {
 
-    const {value, type, placeholder, name, prepend, append, outerClassName, inputClassName} = props
+    const {value, type, placeholder, name, prepend, append, outerClassName, inputClassName, errorResponse} = props
     const [HasError, setHasError] = useState(null);
     let pattern = ""
     if (type === "email") pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -56,7 +56,7 @@ export default function Text(props) {
                     </div>
                 )}
             </div>
-                {HasError && <span className="error-helper">{HasError}</span>}
+            {HasError && <span className="error-helper">{HasError}</span>}
         </div>
     );
 }
@@ -75,6 +75,7 @@ Text.propTypes = {
     prepend: propTypes.oneOfType([propTypes.number, propTypes.string]),
     append: propTypes.oneOfType([propTypes.number, propTypes.string]),
     type: propTypes.string,
+    errorResponse: propTypes.string,
     placeholder: propTypes.string,
     outerClassName: propTypes.string,
     inputClassName: propTypes.string

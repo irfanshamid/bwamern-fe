@@ -7,7 +7,7 @@ export default function Stepper(props) {
     const { steps, initialStep } = props;
     const stepsKeys = Object.keys(steps);
 
-    const {CurrentStep, setCurrentStep} = useState(
+    const [CurrentStep, setCurrentStep] = useState(
         stepsKeys.indexOf(initialStep) > -1 ? initialStep : stepsKeys[0]
     );
     const totalStep = stepsKeys.length;
@@ -15,11 +15,11 @@ export default function Stepper(props) {
 
 
     function  prevStep(){
-        if (+indexStep > 0) setCurrentStep(stepsKeys(indexStep - 1)); 
+        if (+indexStep > 0) setCurrentStep(stepsKeys[indexStep - 1]); 
     }
 
     function  nextStep(){
-        if (+indexStep < totalStep) setCurrentStep(stepsKeys(indexStep + 1)); 
+        if (+indexStep < totalStep) setCurrentStep(stepsKeys[indexStep + 1]); 
     }
 
     return <> { props.children(prevStep, nextStep, CurrentStep, steps) } </>;

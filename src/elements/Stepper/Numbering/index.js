@@ -1,9 +1,9 @@
 import React from 'react'
 import Fade from 'react-reveal/Fade'
-import protoType from 'prop-types'
+import propTypes from 'prop-types'
 
 import './index.scss'
-export default function Numbering(style, className, data, current) {
+export default function Numbering({style, className, data, current}) {
     
     const KeysOfData = Object.keys(data);
     return (
@@ -22,15 +22,13 @@ export default function Numbering(style, className, data, current) {
                         </li>
                     );
                })}
-            </ol>
-            
-
+            </ol> 
         </Fade>
     )
 }
 
-Numbering.protoType = {
-    className: protoType.string,
-    data: protoType.object,
-    current: protoType.string
+Numbering.propTypes = {
+    className: propTypes.string,
+    data: propTypes.object,
+    current: propTypes.string
 };

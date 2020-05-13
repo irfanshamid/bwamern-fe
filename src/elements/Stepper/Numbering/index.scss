@@ -38,7 +38,7 @@ $size: 50px;
 
         &:not(:last-child){
             margin-right: 60px;
-            &::before {
+            &:before {
                 content: "";
                 z-index: -2;
                 top: 50%;
@@ -51,7 +51,7 @@ $size: 50px;
         }
 
         &.active {
-            &.after {
+            &:after {
                 z-index: -1;
                 background: $white;
                 border: 1px solid $stepperMainColor;
@@ -63,7 +63,7 @@ $size: 50px;
             & ~ li {
                 color: $gray-500;
                 background: $stepperMainColor;
-                &.after {
+                &:after {
                     content: none;
                 }
             }
