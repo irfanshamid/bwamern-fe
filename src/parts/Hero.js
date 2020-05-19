@@ -12,11 +12,10 @@ export default function Hero(props) {
     
     function showMostPicked(){
         window.scrollTo({
-            top: props.refMostPicked.current.offsetTop - 30,
+            top: 600,
             behavior: "smooth"
         });
     }
-
 
     return (
         <Fade bottom>
